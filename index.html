@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#101113" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Aditya Choudhury — computer science student exploring software, vehicle dynamics, and financial technology. Projects and experiments, in progress.">
+  <title>Aditya Choudhury — Curiosity, applied.</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="refinements.css">
+  <script src="projects.js" defer></script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="icon-reset" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 2 8M4 4v6h6"/></symbol>
+  </svg>
+  <header class="site-header">
+    <div class="header-inner container">
+      <a class="wordmark" href="#top" aria-label="Aditya Choudhury, home">aditya<span aria-hidden="true">.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#work">Work</a><a href="#next">Next</a><a href="#lab" aria-label="Interactive lab">Lab</a><a href="#about">About</a><a href="#contact" class="contact-nav">Contact</a>
+      </nav>
+      <a class="header-github" href="https://github.com/aditya-ac2006" target="_blank" rel="noopener noreferrer">GitHub<svg class="icon" aria-hidden="true"><use href="#icon-external"/></svg><span class="sr-only"> (opens in a new tab)</span></a>
+    </div>
+  </header>
+  <main id="main">
+    <section id="top" class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow entrance">Computer science student <span class="eyebrow-separator" aria-hidden="true">/</span> Manipal, Bengaluru</p>
+        <h1 id="hero-title" class="entrance" aria-label="Aditya Choudhury">Aditya<br> <span>Choudhury.</span></h1>
+        <p class="hero-tagline entrance">Curiosity, applied.</p>
+        <p class="hero-description entrance">I’m exploring how code helps us understand real systems. From tyre models and suspension geometry to learning my way around campus DGX.</p>
+        <div class="hero-actions entrance">
+          <a class="button button-primary" href="#work">Explore my work<svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></a>
+          <a class="button button-quiet" href="#contact">Contact me<svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></a>
+        </div>
+        <p class="hero-location entrance">Manipal University <span aria-hidden="true">·</span> Bengaluru, India</p>
+      </div>
+      <section id="lab" class="experiment entrance" aria-labelledby="experiment-title">
+        <div class="experiment-heading"><p class="eyebrow">A small experiment</p><span class="demo-label">Synthetic data</span></div>
+        <h2 id="experiment-title">Load changes grip.</h2>
+        <p class="experiment-description">Move the slider. Watch the response change.</p>
+        <div class="chart" role="img" aria-labelledby="chart-title chart-desc">
+          <span id="chart-title" class="chart-axis-title">Lateral force (N)</span>
+          <span id="chart-desc" class="sr-only">A synthetic tyre response curve at 800 newtons vertical load.</span>
+          <div class="chart-y-ticks" aria-hidden="true"><span>3,000</span><span>1,500</span><span>0</span></div>
+          <div class="chart-plot">
+            <svg viewBox="0 0 500 220" preserveAspectRatio="none" aria-hidden="true">
+              <defs><linearGradient id="chart-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--signal)" stop-opacity=".15"/><stop offset="1" stop-color="var(--signal)" stop-opacity="0"/></linearGradient></defs>
+              <g class="chart-grid"><path d="M0 1H500M0 110H500M0 219H500"/></g>
+              <path id="curve-area" fill="url(#chart-fill)"/><path id="curve" class="chart-line"/><circle id="curve-end" r="4.5" class="chart-dot"/>
+            </svg>
+          </div>
+          <div class="chart-x-ticks" aria-hidden="true"><span>0°</span><span>3°</span><span>6°</span><span>9°</span><span>12°</span></div>
+          <span class="chart-x-title">Slip angle (°)</span>
+        </div>
+        <div class="experiment-control">
+          <label for="load">Vertical load</label><output id="load-value" for="load" aria-live="off">800 N</output>
+          <input id="load" type="range" min="200" max="1200" step="50" value="800" aria-describedby="demo-note" aria-valuetext="800 newtons">
+          <div class="range-limits" aria-hidden="true"><span>200 N</span><span>1,200 N</span></div>
+        </div>
+        <div class="experiment-result">
+          <div><span class="metric-label">Peak force in view</span><strong id="peak">1,680 <small>N</small></strong></div>
+          <button type="button" id="reset" class="button button-small">Reset<svg class="icon" aria-hidden="true"><use href="#icon-reset"/></svg></button>
+        </div>
+        <p id="demo-note" class="demo-note">Synthetic demo. Not TTC data or the validated CMM model.</p>
+        <details class="sample-values">
+          <summary>View sample values</summary>
+          <div class="table-scroll"><table><caption>Current synthetic curve</caption><thead><tr><th scope="col">Slip angle</th><th scope="col">Lateral force</th></tr></thead><tbody id="sample-rows"></tbody></table></div>
+        </details>
+        <p id="chart-update" class="sr-only" role="status" aria-live="polite"></p>
+      </section>
+    </section>
+    <section id="work" class="work section container" aria-labelledby="work-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Projects & explorations</p><h2 id="work-title">A few things I’m building.</h2></div>
+        <p>Engineering questions.<br> Hands-on experiments.</p>
+      </div>
+      <div class="work-toolbar">
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button type="button" data-filter="all" aria-pressed="true">All work</button>
+          <button type="button" data-filter="engineering" aria-pressed="false">Engineering</button>
+          <button type="button" data-filter="compute" aria-pressed="false">Computing</button>
+          <button type="button" data-filter="web" aria-pressed="false">Web</button>
+        </div>
+        <p id="project-count" class="project-count" role="status" aria-live="polite">3 projects</p>
+      </div>
+      <div id="projects" class="projects"></div>
+      <noscript><p class="no-script-note">Interactive project notes and the experiment need JavaScript. Current work includes CMM tyre modelling and suspension kinematics, campus GPU learning, and this portfolio. <a href="https://github.com/aditya-ac2006">Visit my GitHub profile</a>.</p></noscript>
+    </section>
+    <section id="next" class="next-section container section" aria-labelledby="next-title">
+      <div class="section-heading"><div><p class="eyebrow">On my learning horizon</p><h2 id="next-title">Where curiosity goes next.</h2></div><p>Directions I want to explore.<br> Not finished projects.</p></div>
+      <div id="next-projects" class="next-grid"></div>
+    </section>
+    <section id="about" class="about-section" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div><p class="eyebrow">A little about me</p><h2 id="about-title">Still learning.<br>Already building.</h2></div>
+        <div class="about-copy">
+          <p class="about-lead">I’m a computer science student who likes seeing what happens when an idea meets a real system.</p>
+          <p>My Formula Student work takes me into tyre modelling, suspension geometry, and MATLAB. My campus DGX experience is introducing me to GPU computing, Linux, and container workflows.</p>
+          <p>This portfolio is part of that process: a place to learn HTML, CSS, and JavaScript, refine my design skills, and share new work as I grow.</p>
+          <div class="toolbox" aria-label="Tools and interests"><span>MATLAB</span><span>Python</span><span>Java</span><span>Git</span><span>Linux</span><span>Data analysis</span></div>
+          <div class="learning-note"><span class="eyebrow">Learning by doing</span><p>Engineering tools now. A finance-focused LLM platform and an ASL practice website on my learning horizon.</p></div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="contact-section container section" aria-labelledby="contact-title">
+      <div class="contact-layout">
+        <div class="contact-copy">
+          <p class="eyebrow">Contact me</p>
+          <h2 id="contact-title">Good things start<br> with a conversation.</h2>
+          <p>Have a project idea, an internship opportunity, or an interesting engineering question? I’d love to hear about it.</p>
+          <p class="contact-signature">Aditya Choudhury <span aria-hidden="true">↗</span></p>
+        </div>
+        <div class="contact-panel">
+          <p class="eyebrow" id="contact-links-label">Find me online</p>
+          <div id="contact-links" class="contact-links" aria-labelledby="contact-links-label"></div>
+          <noscript><a class="button button-small" href="https://github.com/aditya-ac2006" target="_blank" rel="noopener noreferrer">Aditya on GitHub (opens in a new tab)</a></noscript>
+          <p class="contact-note">Based in Bengaluru, India.<br>Building, learning, and open to new ideas.</p>
+        </div>
+      </div>
+    </section>
+    <footer class="container site-footer">
+      <details class="photo-credits"><summary>Photo sources & credits</summary><p>Real photographs, sourced through web search. No AI-generated images. These are reference images, not photographs of my own car or campus hardware.</p><ul><li>Formula Student Germany autocross — © FSG / Ole Kröger. <a href="https://commons.wikimedia.org/wiki/File:FSG_Autocross_Kroeger.jpg" target="_blank" rel="noopener noreferrer">Original photograph</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/de/deed.en" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0 DE</a>. Downsized and converted to WebP; display cropped to fit.</li><li>NVIDIA DGX B200 / HGX board — Pokiiri. <a href="https://commons.wikimedia.org/wiki/File:Nvidia_DGX-B200-HGX.jpg" target="_blank" rel="noopener noreferrer">Original photograph</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>. Downsized and converted to WebP; display cropped to fit. Reference only, not my campus system.</li></ul><p>Campus context: <a href="https://cia.manipal.edu/mu/campuses/mahe-bengaluru/academics/institution-list/mit-blr/news-events/-workshop-on-unleashing-the-power-of-gpu.html" target="_blank" rel="noopener noreferrer">MIT Bengaluru’s GPU workshop</a>. This source documents the event, not individual attendance or project outcomes.</p></details>
+      <div class="footer-bottom"><p>© <span id="year">2026</span> Aditya Choudhury</p><p>Made to grow with me.</p><a class="back-top" href="#top">Back to top<svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></a></div>
+    </footer>
+  </main>
+  <dialog id="project-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-toolbar"><span class="eyebrow">Project notes</span><button type="button" class="close" aria-label="Close project details"><svg class="icon" aria-hidden="true"><use href="#icon-close"/></svg></button></div>
+    <div id="dialog-content"></div>
+  </dialog>
+<script src="app.js" defer></script></body>
+</html>

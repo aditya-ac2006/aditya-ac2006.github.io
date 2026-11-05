@@ -1,0 +1,74 @@
+/* Content updates retain the original six-role design system. */
+.wordmark { display: inline-flex; padding-block: .375rem; font-size: 1.625rem; line-height: 1.2; letter-spacing: -.065em; }
+.wordmark span { display: inline; color: var(--signal); }
+.hero-copy { min-width: 0; }
+.hero h1 { font-size: clamp(2.625rem, 5.3vw, 4.625rem); letter-spacing: -.055em; margin-block: 1.25rem; color: var(--text); }
+.hero h1 span { color: var(--text); }
+.hero-tagline { font-size: 1.5rem; font-weight: 550; line-height: 1.35; letter-spacing: -.035em; margin-bottom: 1rem; color: var(--signal); }
+.contact-nav { color: var(--text); font-weight: 600; }
+.contact-section { padding-block: 5rem 4rem; }
+.contact-layout { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 4rem; align-items: center; }
+.contact-copy h2 { font-size: clamp(2.25rem, 4vw, 3.5rem); font-weight: 600; letter-spacing: -.05em; margin-block: 1rem 1.5rem; }
+.contact-copy > p:not(.eyebrow):not(.contact-signature) { max-width: 31rem; color: var(--secondary); font-size: 1.0625rem; line-height: 1.8; }
+.contact-signature { margin-top: 2rem; font-size: 1rem; font-weight: 600; letter-spacing: -.025em; }
+.contact-signature span { color: var(--signal); margin-left: .5rem; }
+.contact-panel { min-width: 0; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 2rem; }
+.contact-links { margin-block: 1.25rem; }
+.contact-link { display: flex; gap: 1rem; align-items: center; justify-content: space-between; min-height: 5.5rem; padding: 1rem 0; border-block: 1px solid var(--line); }
+.contact-link + .contact-link { border-top: 0; }
+.contact-link > span { min-width: 0; }
+.contact-link strong { display: block; font-size: 1.25rem; line-height: 1.35; font-weight: 600; letter-spacing: -.03em; }
+.contact-link small { display: block; margin-top: .375rem; color: var(--secondary); font-size: .875rem; overflow-wrap: anywhere; }
+.contact-link > .icon { width: 1.25rem; height: 1.25rem; color: var(--action); }
+.contact-link:hover { color: var(--action); background: var(--soft); }
+.contact-note { color: var(--secondary); font-size: .8125rem; line-height: 1.8; }
+.site-footer { padding-top: 0; }
+.project-photo { display: flex; flex-direction: column; margin: 0; min-width: 0; background: var(--soft); }
+.project-photo img { display: block; width: 100%; height: 17rem; object-fit: cover; flex: 1 1 auto; }
+.project-photo figcaption { flex: 0 0 auto; padding: .75rem 1.25rem; background: var(--panel); color: var(--secondary); border-top: 1px solid var(--line); font-size: .75rem; line-height: 1.65; overflow-wrap: anywhere; }
+.project-photo figcaption a { text-decoration: underline; text-underline-offset: .2em; }
+.project-featured .project-photo { min-height: 28rem; }
+.project-featured .project-photo img { height: 0; min-height: 20rem; object-position: 28% center; }
+.compute-photo img { object-position: center 36%; }
+.work { padding-bottom: 4rem; }
+.next-section { padding-top: 1.5rem; }
+.next-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.next-card { min-width: 0; padding: 2rem; border-top: 2px solid var(--control-border); }
+.next-meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; }
+.next-card h3 { font-size: 1.75rem; letter-spacing: -.04em; margin-block: 1.5rem 1rem; }
+.next-card > p { color: var(--secondary); font-size: 1rem; line-height: 1.8; }
+.next-card .next-difference { margin-top: 1rem; font-size: .9375rem; }
+.next-details { margin-top: 1.25rem; border-top: 1px solid var(--line); }
+.next-details summary { min-height: 44px; padding-block: .75rem; color: var(--action); font-size: .875rem; }
+.next-details h4 { font-size: .875rem; margin-block: 1rem .375rem; }
+.next-details p { color: var(--secondary); font-size: .875rem; line-height: 1.8; overflow-wrap: anywhere; }
+.next-details .next-references { margin-top: 1rem; font-size: .75rem; }
+.next-references a { color: var(--action); text-decoration: underline; text-underline-offset: .2em; }
+.next-step { margin-top: 1.5rem; border-left: 2px solid var(--line); padding-left: 1rem; }
+.next-step > span { font-size: .75rem; color: var(--secondary); font-weight: 600; }
+.next-step p { font-size: .875rem; color: var(--secondary); margin-top: .375rem; }
+.photo-credits { margin-top: 2.5rem; border-top: 1px solid var(--line); padding-top: 1rem; color: var(--secondary); font-size: .8125rem; }
+.photo-credits summary { width: fit-content; display: flex; align-items: center; min-height: 44px; cursor: pointer; color: var(--text); font-weight: 550; }
+.photo-credits p { max-width: 54rem; margin-block: .5rem; }
+.photo-credits li { margin-bottom: .75rem; overflow-wrap: anywhere; }
+.photo-credits a { text-decoration: underline; text-underline-offset: .2em; }
+.photo-credits ul { padding-left: 1.125rem; max-width: 58rem; }
+.project-action { margin-top: auto; }
+.tags { margin-bottom: 1.5rem; }
+.project-body { gap: 0; }
+@media (max-width: 49rem) {
+  .wordmark { font-size: 1.5rem; }
+  .contact-section { padding-block: 3rem; }
+  .contact-layout { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .contact-panel { padding: 1.5rem; }
+  .next-grid { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .next-card { padding: 1.5rem 0; }
+  .project-featured .project-photo { min-height: 0; }
+  .project-featured .project-photo img { flex: 0 0 auto; height: 18rem; min-height: 0; }
+  .project-photo img { height: 15rem; }
+  .project h3 { font-size: 1.625rem; }
+}
+@media (max-width: 25rem) {
+  .contact-panel { padding: 1.25rem; }
+  nav a { font-size: .8125rem; padding-inline: .375rem; }
+}
